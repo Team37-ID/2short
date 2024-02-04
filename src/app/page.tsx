@@ -1,8 +1,12 @@
-import Image from "next/image";
+import URLInput from "@/components/ui/url-input"
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+		<main className="flex flex-col gap-2 min-h-screen items-center justify-center md:flex-row">
+			<URLInput />
+			<button type="button" className="btn btn-primary w-full md:w-auto">
+				Create
+			</button>
 		</main>
-	);
+	)
 }
