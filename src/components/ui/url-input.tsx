@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { ZodError, z } from "zod"
 
@@ -7,16 +8,18 @@ const URLInput = () => {
 	const url = z
 		.string()
 		.url({ message: "Please provide a valid URL" })
-		.min(1)
 		.startsWith("https://", { message: "Must provide secure URL" })
 		.trim()
 
 	const [inputVal, setInputVal] = useState<string>()
 	const [errMessage, setErrMessage] = useState<string>()
+	const [isError, setIsError] = useState<boolean>(false)
 
 	const handlTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const val = e.target.value
 		setInputVal(val)
+		val.length < 1 ? setIsError(true) : setIsError(false)
+		url.safeParse(val)
 		console.log(val)
 	}
 
@@ -46,7 +49,10 @@ const URLInput = () => {
 			{errMessage && <p className="text-red-500">{errMessage}</p>}
 			<button
 				type="submit"
-				className="btn btn-primary w-full max-w-sm md:w-auto"
+				className={cn(
+					"btn btn-primary w-full max-w-sm md:w-auto",
+					isError && "btn-disabled",
+				)}
 				onClick={handleClick}
 			>
 				Create
