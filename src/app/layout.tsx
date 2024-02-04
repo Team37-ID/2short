@@ -4,6 +4,7 @@ import "./globals.css"
 import Navbar from "@/components/ui/navbar"
 import { IconoirProvider } from "iconoir-react"
 import "@/styles/magic-pattern.css"
+import Footer from "@/components/ui/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -32,6 +33,7 @@ export default function RootLayout({
 					<div className="px-8 md:px-64 py-8 grain">
 						<Navbar />
 						{children}
+						<Footer />
 					</div>
 				</body>
 			</html>
