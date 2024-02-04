@@ -10,8 +10,12 @@ const ToggleDark = () => {
 				className="theme-controller"
 				value="halloween"
 			/>
-			<SunLight className="swap-on fill-current" />
-			<HalfMoon className="swap-off fill-current" />
+			<div className="swap-on border flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-orange-600 to-yellow-400 backdrop-blur-lg">
+				<SunLight className="fill-current w-6 md:w-full" />
+			</div>
+			<div className="swap-off border flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-purple-900 to-violet-500 backdrop-blur-lg">
+				<HalfMoon className="fill-current w-6 md:w-full" />
+			</div>
 		</label>
 	)
 }
