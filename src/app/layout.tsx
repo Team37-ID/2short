@@ -28,7 +28,7 @@ export default function RootLayout({
 		>
 			<html lang="en">
 				<body
-					className={`${inter.className} bg-gradient-to-br from-[#E37DB9] to-[#FDFBC1] dark:from-[#030264] dark:to-[#D99BFA]`}
+					className={`${inter.className} bg-gradient-to-br from-[#E37DB9] to-[#FDFBC1] dark:from-[#6142FF] dark:to-[#FAB0FF]`}
 				>
 					<div className="px-8 md:px-64 py-8 grain">
 						<Navbar />
