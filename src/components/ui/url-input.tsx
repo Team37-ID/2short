@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ZodError, z } from "zod"
 
 const URLInput = () => {
@@ -11,14 +11,17 @@ const URLInput = () => {
 		.startsWith("https://", { message: "Must provide secure URL" })
 		.trim()
 
-	const [inputVal, setInputVal] = useState<string>()
-	const [errMessage, setErrMessage] = useState<string>()
+	const [inputVal, setInputVal] = useState<string>("")
+	const [errMessage, setErrMessage] = useState<string>("")
 	const [isError, setIsError] = useState<boolean>(false)
+
+	useEffect(() => {
+		setIsError(inputVal.length < 1)
+	}, [inputVal])
 
 	const handlTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const val = e.target.value
 		setInputVal(val)
-		val.length < 1 ? setIsError(true) : setIsError(false)
 		url.safeParse(val)
 		console.log(val)
 	}
