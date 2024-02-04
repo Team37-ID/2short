@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/ui/navbar"
+import { IconoirProvider } from "iconoir-react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,15 +17,23 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body
-				className={`${inter.className} bg-gradient-to-br from-[#E37DB9] to-[#FDFBC1] dark:from-[#030264] dark:to-[#D99BFA]`}
-			>
-				<div className="px-64 py-8">
-					<Navbar />
-					{children}
-				</div>
-			</body>
-		</html>
+		<IconoirProvider
+			iconProps={{
+				color: "white",
+				width: 24,
+				height: 24,
+			}}
+		>
+			<html lang="en">
+				<body
+					className={`${inter.className} bg-gradient-to-br from-[#E37DB9] to-[#FDFBC1] dark:from-[#030264] dark:to-[#D99BFA]`}
+				>
+					<div className="px-64 py-8">
+						<Navbar />
+						{children}
+					</div>
+				</body>
+			</html>
+		</IconoirProvider>
 	)
 }
