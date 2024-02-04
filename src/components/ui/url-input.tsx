@@ -41,11 +41,11 @@ const URLInput = () => {
 	}
 
 	return (
-		<div className="flex flex-col gap-2 md:flex-row">
+		<div className="flex flex-col gap-2 md:flex-row items-center justify-center">
 			<input
 				type="url"
 				placeholder="Paste long URL here"
-				className="input input-bordered w-full max-w-md"
+				className="input input-bordered w-full max-w-sm md:max-w-md"
 				value={inputVal}
 				onChange={handlTextChange}
 			/>
