@@ -8,8 +8,16 @@ const Footer = () => {
 			<Link href="#">
 				<Image src="2sh.svg" width={64} height={64} alt="2short logo" />
 			</Link>
-			<p className="text-gray-200 text-xs md:text-sm text-center text-pretty">
-				Copyright © 2024 - All right reserved by Team 37
+			<p className="relative flex flex-row text-gray-200 text-xs md:text-sm text-center text-pretty">
+				Copyright © 2024 - All right reserved by{" "}
+				<Link
+					className="cursor-pointer hover:underline hover:text-white transition-all duration-300"
+					href="https://team37.co"
+					passHref
+					target="_blank"
+				>
+					Team 37
+				</Link>
 			</p>
 			<div>
 				<Link
