@@ -1,3 +1,5 @@
+"use client"
+
 import { SendDiagonalSolid } from "iconoir-react/solid"
 import { useCopyToClipboard } from "usehooks-ts"
 
