@@ -8,9 +8,9 @@ import type {
 
 const tables = [
   {
-    name: "url",
+    name: "Url",
     columns: [
-      { name: "full_url", type: "string" },
+      { name: "full_url", type: "string", notNull: true, defaultValue: "" },
       { name: "short_url", type: "string", unique: true },
     ],
   },
@@ -19,11 +19,11 @@ const tables = [
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
 
-export type Url = InferredTypes["url"];
+export type Url = InferredTypes["Url"];
 export type UrlRecord = Url & XataRecord;
 
 export type DatabaseSchema = {
-  url: UrlRecord;
+  Url: UrlRecord;
 };
 
 const DatabaseClient = buildClient();

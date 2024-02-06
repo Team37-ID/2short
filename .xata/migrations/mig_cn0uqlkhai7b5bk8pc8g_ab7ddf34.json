@@ -1,0 +1,13 @@
+{
+  "id": "mig_cn0uqlkhai7b5bk8pc8g",
+  "parentID": "mig_cn0r8qr6hlb4ktd6e180",
+  "checksum": "1:ab7ddf344f477f40bdf6b470606655d2d580f514f4340a128947640bcc8fc63e",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "full_url",
+        "table": "url"
+      }
+    }
+  ]
+}
