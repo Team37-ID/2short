@@ -1,0 +1,13 @@
+{
+  "id": "mig_cn0uslp4p31jf4mt8tkg",
+  "parentID": "mig_cn0ureshai7b5bk8pcag",
+  "checksum": "1:89d346801b1f22d803fafa9087f5e68cdab0ca03340435582f39d24a75e1d216",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Url",
+        "oldName": "url"
+      }
+    }
+  ]
+}

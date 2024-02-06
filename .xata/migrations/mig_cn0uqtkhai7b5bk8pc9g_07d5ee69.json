@@ -1,0 +1,18 @@
+{
+  "id": "mig_cn0uqtkhai7b5bk8pc9g",
+  "parentID": "mig_cn0uqmb6hlb4ktd6e2ig",
+  "checksum": "1:07d5ee693c52becce6b84cc31e5564011598aab3a474a0d88f0f0b5a6ea179d9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "full_url",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "url"
+      }
+    }
+  ]
+}
