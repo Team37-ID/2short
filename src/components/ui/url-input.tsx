@@ -49,7 +49,6 @@ const URLInput = () => {
 				value={inputVal}
 				onChange={handlTextChange}
 			/>
-			{errMessage && <p className="text-red-500">{errMessage}</p>}
 			<button
 				type="submit"
 				className={cn(
