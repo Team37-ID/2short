@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Team-37-lsqo6i.us-east-1.xata.sh/db/2short",
+  "codegen": {
+    "output": "src/lib/db/xata.ts"
+  }
+}
