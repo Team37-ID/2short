@@ -26,11 +26,20 @@ const URLInput = () => {
 		console.log(val)
 	}
 
-	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault()
 		try {
-			url.safeParse(inputVal)
+			const validatedUrl = url.safeParse(inputVal)
 			setErrMessage("")
+
+			await fetch("/api/v1/shortenurl", {
+				method: "POST",
+				body: JSON.stringify({ fullUrl: validatedUrl }),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+
 			console.log("Success")
 		} catch (err) {
 			if (err instanceof ZodError) {
@@ -53,7 +62,7 @@ const URLInput = () => {
 				type="submit"
 				className={cn(
 					"btn btn-primary w-full max-w-sm md:w-auto",
-					isError && "btn-disabled",
+					isError && "btn-disabled cursor-not-allowed",
 				)}
 				onClick={handleClick}
 			>
