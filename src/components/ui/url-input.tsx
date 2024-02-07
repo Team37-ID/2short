@@ -29,7 +29,7 @@ const URLInput = () => {
 	const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault()
 		try {
-			const validatedUrl = url.safeParse(inputVal)
+			const validatedUrl = url.parse(inputVal)
 			setErrMessage("")
 
 			await fetch("/api/v1/shortenurl", {
